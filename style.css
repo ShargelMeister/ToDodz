@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box
+}
+.todo-main {
+  text-align: center;
+  background-color: cadetblue;
+  width: 800px;
+  margin: auto;
+  padding: 0 0 50px;
+}
+
+ul {
+  background-color: chocolate;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
+  padding: 0 0 50px;
+}
+.todo-item {
+  list-style-type: none;
+  cursor: pointer;
+  position: relative;
+  text-align: left;
+  padding: 10px;
+  
+}
+.closeBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  font-size: 18px;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+.todo-list {
+  text-align: center;
+  background-color: chocolate;
+  width: 800px;
+  margin: auto;
+  padding: 0 0 50px;
+}
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+Input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 500px;
+  padding: 10px;
+  font-size: 18px;
+}
+.checked {
+  text-decoration: line-through;
+  background-color: rgb(85, 43, 13);
+}
+.template {
+  display: none;
+}
