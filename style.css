@@ -26,7 +26,7 @@ ul {
   
 }
 .closeBtn {
-  position: absolute;
+  position:absolute;
   right: 0;
   top: 0;
   padding: 10px;
@@ -57,7 +57,7 @@ h2 {
   border-radius: 0;
 }
 
-Input {
+input {
   margin: 0;
   border: none;
   border-radius: 0;
@@ -71,4 +71,14 @@ Input {
 }
 .template {
   display: none;
+}
+.hide {
+  display: none;
+}
+.ready-todo-list {
+  text-align: center;
+  background-color: chocolate;
+  width: 800px;
+  margin: auto;
+  padding: 0 0 50px;
 }

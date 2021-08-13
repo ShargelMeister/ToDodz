@@ -10,11 +10,26 @@
   <div class="todo-main" class="header">
     <h2>Мой список дел</h2>
     <input type="text" class="input">
-    <span class="addBtn">Добавить</span>
+    <button class="addBtn">Добавить</button>
   </div>
   <div class="todo-list">
     <ul class="todo-items">
-      <li class="template todo-item active"><span class ="closeBtn">×</span></li>
+      <li class="template todo-item active">
+        <span class ="text"></span>
+        <div class="edit-form hide">
+          <input type="text" class="edit-input">
+          <button class="edit-button">Изменить</button>
+        </div>
+        <button class="edit">Изменить</button>
+        <button class="ready-button">Готово</button>
+        <span class ="closeBtn">×</span>
+      </li>
+    </ul>
+  </div>
+  <div class="ready-todo-list">
+    <h2>Выполненные дела</h2>
+    <ul class="ready-todo-items">
+
     </ul>
   </div>
 <script src='app.js'></script>
