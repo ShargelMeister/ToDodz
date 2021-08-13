@@ -41,7 +41,6 @@ function editInput(todoItem) {
     const newValue = editInput.value;
 
     todoItem.getElementsByClassName('text')[0].innerHTML = newValue;
-    editInput.value = '';
     const editForm = todoItem.getElementsByClassName('edit-form')[0];
     editForm.classList.add('hide');
 };
