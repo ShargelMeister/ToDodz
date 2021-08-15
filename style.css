@@ -82,3 +82,15 @@ input {
   margin: auto;
   padding: 0 0 50px;
 }
+.todo-item-ready .edit {
+  display: none;
+}
+.todo-item-ready .ready-button {
+  display: none;
+}
+.back-button {
+  display: none;
+}
+.todo-item-ready .back-button {
+  display: block;
+}
