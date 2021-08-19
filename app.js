@@ -10,12 +10,21 @@ addBtn.addEventListener('click', () => {
     createTodoItem();
     
 });
+
 function addToActiveTodos(textTodo) {
     localTodo.push(textTodo);
 };
+
+function addToBackActiveTodos(textTodo) {
+    localTodo.push(textTodo);
+    readyLocalTodo.shift(textTodo);
+};
+
 function addToReadyTodos(textTodo) {
     readyLocalTodo.push(textTodo);
+    localTodo.shift(textTodo);
 };
+
 function createTodoItem() { 
     const newTodo = template.cloneNode(true);
     const text = newTodo.getElementsByClassName('text')[0];
@@ -26,31 +35,42 @@ function createTodoItem() {
     
     input.value = '';
 };
+
 function deleteItem (todoItem) {
     if (!todoItem) {
         return;
     }
     todoItem.remove();
 };
+
 function onReadyClickTodo(todoItem) {
     const readyTodoItem = todoItem.cloneNode(true);
+    const text = todoItem.getElementsByClassName('text')[0];
+
     readyTodoItem.classList.add('todo-item-ready');
-    addToReadyTodos(readyTodoItem.value);
+    addToReadyTodos(text.textContent);
     readyTodoItems.appendChild(readyTodoItem);
     deleteItem(todoItem);
 };
+
 function onReadyBackClickTodo(todoItem) {
     const backTodoItem = todoItem.cloneNode(true);
+    const text = todoItem.getElementsByClassName('text')[0];
+
     backTodoItem.classList.remove('todo-item-ready');
     todoItems.appendChild(backTodoItem);
+    addToBackActiveTodos(text.textContent);
     deleteItem(todoItem);
 };
+
 function showInput(todoItem) {
     const editForm = todoItem.getElementsByClassName('edit-form')[0];
     const readyButton = todoItem.getElementsByClassName('ready-button')[0];
+
     readyButton.classList.add('hide');
     editForm.classList.remove('hide');
 };
+
 function editInput(todoItem) {
     const editInput = todoItem.getElementsByClassName('edit-input')[0];
     const newValue = editInput.value;
@@ -61,7 +81,6 @@ function editInput(todoItem) {
     readyButton.classList.remove('hide');
     editForm.classList.add('hide');
 };
-
 document.addEventListener('click',function(e){
     if (!e.target) {
         return;
