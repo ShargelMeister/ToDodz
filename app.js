@@ -6,30 +6,31 @@ const template = document.querySelector('.template');
 const readyTodoItems = document.querySelector('.ready-todo-items');
 let localTodo = [];
 let readyLocalTodo = [];
+let todoId = 0;
 addBtn.addEventListener('click', () => {
     createTodoItem();
     
 });
 
-function addToActiveTodos(textTodo) {
-    localTodo.push(textTodo);
+function addToActiveTodos({ id , text}) {
+    localTodo.push({ id , text});
 };
 
 function addToBackActiveTodos(textTodo) {
     localTodo.push(textTodo);
-    readyLocalTodo.shift(textTodo);
+    readyLocalTodo = readyLocalTodo.filter(({id}) => id !== todoId );
 };
 
-function addToReadyTodos(textTodo) {
-    readyLocalTodo.push(textTodo);
-    localTodo.shift(textTodo);
+function addToReadyTodos(todosId) {
+    readyLocalTodo.push(todoId);
+    localTodo = localTodo.filter(({id}) => id !== todoId );
 };
-
 function createTodoItem() { 
     const newTodo = template.cloneNode(true);
     const text = newTodo.getElementsByClassName('text')[0];
     text.innerHTML = input.value;
     newTodo.classList.remove('template');
+    newTodo.dataset.id = todoId++;
     todoItems.appendChild(newTodo);
     addToActiveTodos(input.value);
     
